@@ -58,7 +58,16 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 60px; di
 .roi-banner strong { color:#E8F0F8; }
 footer { padding:40px 60px; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 footer p { font-size:13px; color:rgba(200,220,240,0.5); }
-@media(max-width:900px) { .pricing-grid { grid-template-columns:1fr; max-width:420px; margin:60px auto 0; } nav { padding:16px 24px; } .hero { padding:100px 24px 60px; } .stats-bar { gap:30px; padding:30px 24px; } .section { padding:60px 24px; } .pricing-section { padding:60px 24px; } footer { padding:30px 24px; } }
+.faq-section { padding:100px 60px; max-width:800px; margin:0 auto; }
+.faq-title { font-family:'Syne',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:800; text-align:center; margin-bottom:60px; }
+.faq-item { border-bottom:1px solid rgba(255,255,255,0.07); }
+.faq-question { width:100%; background:none; border:none; color:#1E90FF; font-size:16px; font-weight:600; padding:20px 0; text-align:left; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:'DM Sans',sans-serif; }
+.faq-answer { max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+.faq-answer p { color:rgba(200,220,240,0.7); font-size:14px; line-height:1.8; padding-bottom:20px; }
+.faq-item.open .faq-answer { max-height:200px; }
+.faq-item.open .faq-question span { transform:rotate(180deg); }
+.faq-question span { transition:transform 0.3s; display:inline-block; }
+@media(max-width:900px) { .pricing-grid { grid-template-columns:1fr; max-width:420px; margin:60px auto 0; } nav { padding:16px 24px; } .hero { padding:100px 24px 60px; } .stats-bar { gap:30px; padding:30px 24px; } .section { padding:60px 24px; } .pricing-section { padding:60px 24px; } footer { padding:30px 24px; } .faq-section { padding:60px 24px; } }
 </style>
 </head>
 <body>
@@ -163,10 +172,46 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
   </div>
 </section>
 
+<section class="faq-section">
+  <h2 class="faq-title">Questions fréquentes</h2>
+  <div class="faq-item">
+    <button class="faq-question">Est-ce que mes données sont sécurisées ? <span>▼</span></button>
+    <div class="faq-answer"><p>Oui. Toutes les données sont hébergées en Europe sur des serveurs conformes RGPD. Seuls vous et vos collaborateurs autorisés y avez accès. Aucune donnée n'est partagée avec des tiers.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Combien de temps faut-il pour prendre en main l'outil ? <span>▼</span></button>
+    <div class="faq-answer"><p>Moins d'une heure. L'interface est conçue pour des gestionnaires de centre, pas des informaticiens. Une formation de prise en main est incluse dans tous les plans.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Est-ce que je peux importer ma base d'apprenants existante ? <span>▼</span></button>
+    <div class="faq-answer"><p>Oui. SecurForm accepte l'import CSV compatible Excel. Vous importez toute votre base en moins de 2 minutes.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Est-ce que l'outil fonctionne pour tous les types de formations ? <span>▼</span></button>
+    <div class="faq-answer"><p>Oui. SSIAP 1/2/3, recyclage, remise à niveau, MAC APS, TFP APS, SST, habilitation électrique et toute formation personnalisée.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Que se passe-t-il si je veux résilier ? <span>▼</span></button>
+    <div class="faq-answer"><p>Aucun engagement. Vous résiliez quand vous voulez depuis les réglages. Vos données vous appartiennent et sont exportables à tout moment.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Proposez-vous une période d'essai ? <span>▼</span></button>
+    <div class="faq-answer"><p>Oui. Nous proposons 2 mois gratuits pour les centres partenaires bêta. Contactez-nous à contact@securform.fr pour en bénéficier.</p></div>
+  </div>
+</section>
+
 <footer id="contact">
   <div class="logo">SecurForm</div>
   <p>CRM spécialisé centres de formation sécurité privée SSIAP  France </p>
   <p>contact@securform.fr</p>
 </footer>
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+  });
+});
+</script>
 </body>
 </html>
