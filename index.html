@@ -8,32 +8,59 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:#060D14; color:#E8F0F8; font-family:'DM Sans',sans-serif; }
+
+/* Navigation */
 nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 60px; display:flex; justify-content:space-between; align-items:center; background:rgba(6,13,20,0.9); backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,0.07); }
 .logo { font-family:'Syne',sans-serif; font-size:22px; font-weight:800; display:flex; align-items:center; gap:10px; }
+.nav-links { display:flex; gap:30px; align-items:center; }
+.nav-link { color:#E8F0F8; text-decoration:none; font-weight:500; font-size:14px; transition:color 0.2s; }
+.nav-link:hover { color:#1E90FF; }
 .nav-cta { background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; padding:10px 22px; border-radius:10px; text-decoration:none; font-weight:600; font-size:13px; }
+
+/* Hero Marque */
 .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:120px 60px 80px; }
-.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(30,144,255,0.1); border:1px solid rgba(30,144,255,0.25); color:#1E90FF; padding:8px 16px; border-radius:100px; font-size:12px; font-weight:600; margin-bottom:32px; }
 .hero h1 { font-family:'Syne',sans-serif; font-size:clamp(36px,6vw,68px); font-weight:800; line-height:1.05; letter-spacing:-2px; margin-bottom:24px; color:#E8F0F8; }
-.hero h1 span { color:#1E90FF; }
 .hero-sub { font-size:18px; color:#B8D0E8; max-width:560px; line-height:1.7; margin-bottom:40px; }
 .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
 .btn-primary { background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; padding:14px 28px; border-radius:12px; font-size:15px; font-weight:600; text-decoration:none; box-shadow:0 4px 24px rgba(30,144,255,0.3); transition:transform 0.2s; }
 .btn-primary:hover { transform:translateY(-2px); }
 .btn-secondary { background:rgba(255,255,255,0.035); color:#E8F0F8; padding:14px 28px; border-radius:12px; font-size:15px; font-weight:500; text-decoration:none; border:1px solid rgba(255,255,255,0.07); }
+
+/* Stats Bar */
 .stats-bar { display:flex; justify-content:center; gap:60px; padding:40px 60px; border-top:1px solid rgba(255,255,255,0.07); border-bottom:1px solid rgba(255,255,255,0.07); background:#0B1520; flex-wrap:wrap; }
 .stat-item { text-align:center; }
 .stat-number { font-family:'Syne',sans-serif; font-size:32px; font-weight:800; color:#1E90FF; display:block; }
 .stat-label { font-size:13px; color:rgba(200,220,240,0.5); margin-top:4px; }
+
+/* Sections */
 .section { padding:100px 60px; max-width:1200px; margin:0 auto; }
 .section-tag { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1E90FF; margin-bottom:16px; }
 .section-title { font-family:'Syne',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:800; letter-spacing:-1px; margin-bottom:16px; }
 .section-sub { font-size:16px; color:rgba(200,220,240,0.5); max-width:500px; line-height:1.7; margin-bottom:60px; }
+
+/* Produits Grid */
+.produits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(400px,1fr)); gap:30px; margin-top:60px; }
+.produit-card { background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.07); border-radius:24px; padding:40px; transition:transform 0.2s; position:relative; }
+.produit-card:hover { transform:translateY(-4px); border-color:rgba(30,144,255,0.3); }
+.produit-card.available { border-color:rgba(30,144,255,0.4); }
+.produit-card.coming-soon { opacity:0.8; }
+.produit-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; font-size:11px; font-weight:700; padding:5px 14px; border-radius:100px; white-space:nowrap; }
+.produit-badge.coming { background:linear-gradient(135deg,#FF8C42,#CC6B2F); }
+.produit-icon { font-size:48px; margin-bottom:20px; }
+.produit-title { font-family:'Syne',sans-serif; font-size:24px; font-weight:800; margin-bottom:12px; }
+.produit-desc { font-size:14px; color:rgba(200,220,240,0.5); line-height:1.7; margin-bottom:24px; }
+.produit-cta { background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; padding:12px 24px; border-radius:10px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; }
+.produit-cta.coming { background:linear-gradient(135deg,#FF8C42,#CC6B2F); }
+
+/* Features Grid */
 .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; }
 .feature-card { background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.07); border-radius:20px; padding:28px; transition:transform 0.2s; }
 .feature-card:hover { transform:translateY(-3px); border-color:rgba(30,144,255,0.3); }
 .feature-icon { width:48px; height:48px; background:rgba(30,144,255,0.1); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:18px; }
 .feature-title { font-family:'Syne',sans-serif; font-size:17px; font-weight:700; margin-bottom:10px; }
 .feature-desc { font-size:14px; color:rgba(200,220,240,0.5); line-height:1.7; }
+
+/* Pricing */
 .pricing-section { padding:100px 60px; background:#0B1520; }
 .pricing-inner { max-width:1100px; margin:0 auto; }
 .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:start; margin-top:60px; }
@@ -56,8 +83,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 60px; di
 .roi-banner { background:rgba(30,144,255,0.08); border:1px solid rgba(30,144,255,0.2); border-radius:20px; padding:32px 40px; text-align:center; margin:60px auto 0; max-width:700px; }
 .roi-banner p { font-size:16px; color:rgba(200,220,240,0.7); line-height:1.7; }
 .roi-banner strong { color:#E8F0F8; }
-footer { padding:40px 60px; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
-footer p { font-size:13px; color:rgba(200,220,240,0.5); }
+
+/* FAQ */
 .faq-section { padding:100px 60px; max-width:800px; margin:0 auto; }
 .faq-title { font-family:'Syne',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:800; text-align:center; margin-bottom:60px; }
 .faq-item { border-bottom:1px solid rgba(255,255,255,0.07); }
@@ -67,50 +94,135 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
 .faq-item.open .faq-answer { max-height:200px; }
 .faq-item.open .faq-question span { transform:rotate(180deg); }
 .faq-question span { transition:transform 0.3s; display:inline-block; }
-@media(max-width:900px) { .pricing-grid { grid-template-columns:1fr; max-width:420px; margin:60px auto 0; } nav { padding:16px 24px; } .hero { padding:100px 24px 60px; } .stats-bar { gap:30px; padding:30px 24px; } .section { padding:60px 24px; } .pricing-section { padding:60px 24px; } footer { padding:30px 24px; } .faq-section { padding:60px 24px; } }
+
+/* Mobile Section */
+.mobile-section { padding:100px 60px; max-width:800px; margin:0 auto; text-align:center; }
+.waitlist-form { max-width:400px; margin:40px auto 0; }
+.waitlist-input { width:100%; padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.07); background:rgba(255,255,255,0.035); color:#E8F0F8; font-size:16px; margin-bottom:16px; }
+.waitlist-btn { width:100%; padding:16px; border-radius:12px; background:linear-gradient(135deg,#FF8C42,#CC6B2F); color:#fff; border:none; font-size:16px; font-weight:600; cursor:pointer; transition:transform 0.2s; }
+.waitlist-btn:hover { transform:translateY(-2px); }
+
+/* Footer */
+footer { padding:40px 60px; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+footer p { font-size:13px; color:rgba(200,220,240,0.5); }
+
+/* Responsive */
+@media(max-width:900px) { 
+  .pricing-grid { grid-template-columns:1fr; max-width:420px; margin:60px auto 0; } 
+  .produits-grid { grid-template-columns:1fr; } 
+  .nav-links { display:none; } 
+  nav { padding:16px 24px; } 
+  .hero { padding:100px 24px 60px; } 
+  .stats-bar { gap:30px; padding:30px 24px; } 
+  .section { padding:60px 24px; } 
+  .pricing-section { padding:60px 24px; } 
+  .mobile-section { padding:60px 24px; } 
+  footer { padding:30px 24px; } 
+  .faq-section { padding:60px 24px; } 
+}
 </style>
 </head>
 <body>
+<!-- NAVIGATION -->
 <nav>
   <div class="logo">Ges4Sec</div>
-  <a href="https://crmssiap.vercel.app" class="nav-cta">Voir la démo</a>
+  <div class="nav-links">
+    <a href="#crm" class="nav-link">CRM</a>
+    <a href="#mobile" class="nav-link">Mobile</a>
+    <a href="#pricing" class="nav-link">Tarifs</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+  </div>
+  <a href="https://crmssiap.vercel.app" class="nav-cta">Accéder au CRM</a>
 </nav>
 
+<!-- HERO MARQUE -->
 <section class="hero">
-  <div class="hero-badge">🛡️ Conçu pour les centres de formation en sécurité privée</div>
-  <h1>Le premier CRM dédié aux<br><span>centres de formation</span><br>en sécurité privée</h1>
-  <p class="hero-sub">Plus aucune certification oubliée. Plus aucune relance manquée. Ges4Sec automatise le suivi de vos apprenants et remplit vos sessions à l'avance.</p>
+  <h1>La suite digitale de la sécurité privée</h1>
+  <p class="hero-sub">Ges4Sec développe des outils pensés par des professionnels du terrain pour les acteurs de la sécurité privée en France.</p>
   <div class="hero-ctas">
-    <a href="https://crmssiap.vercel.app" class="btn-primary">Voir la démo en ligne</a>
-    <a href="#pricing" class="btn-secondary">Voir les tarifs</a>
+    <a href="#crm" class="btn-primary">Découvrir le CRM ?</a>
+    <a href="#mobile" class="btn-secondary">Rejoindre la liste d'attente</a>
   </div>
 </section>
 
+<!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat-item"><span class="stat-number">1 500+</span><div class="stat-label">Centres de formation en sécurité privée</div></div>
-  <div class="stat-item"><span class="stat-number">0</span><div class="stat-label">Outil spécialisé existant</div></div>
-  <div class="stat-item"><span class="stat-number">3 ans</span><div class="stat-label">Validité SSIAP à surveiller</div></div>
-  <div class="stat-item"><span class="stat-number">5×</span><div class="stat-label">ROI dès le premier mois</div></div>
+  <div class="stat-item"><span class="stat-number">1 500+</span><div class="stat-label">centres</div></div>
+  <div class="stat-item"><span class="stat-number">0</span><div class="stat-label">outil existant</div></div>
+  <div class="stat-item"><span class="stat-number">10 ans</span><div class="stat-label">terrain</div></div>
+  <div class="stat-item"><span class="stat-number">5×</span><div class="stat-label">ROI</div></div>
 </div>
 
-<section class="section" id="features">
-  <div class="section-tag">Fonctionnalités</div>
-  <h2 class="section-title">Tout ce dont votre<br>centre a besoin</h2>
-  <p class="section-sub">Conçu avec des professionnels SSIAP pour répondre aux vrais besoins du terrain.</p>
-  <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">&#x1F4E1;</div><div class="feature-title">Alertes automatiques</div><div class="feature-desc">Surveillance de toutes les certifications  SSIAP, Carte Pro CNAPS, SST. Les alertes partent avant que vous n'ayez à y penser.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#x1F4E7;</div><div class="feature-title">Relances intelligentes</div><div class="feature-desc">Emails automatiques J-180, J-90 et J-30 avec mention réglementaire CNAPS. Personnalisés, ciblés, sans intervention.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#x1F4C9;</div><div class="feature-title">Relances prédictives</div><div class="feature-desc">L'outil identifie les apprenants éligibles au SSIAP 2 ou 3 et prépare les emails de proposition avant qu'ils cherchent ailleurs.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#x1F4C5;</div><div class="feature-title">Campagne CPF en un clic</div><div class="feature-desc">En mars quand les CPF sont rechargés, identifiez tous vos apprenants éligibles et lancez la campagne en un seul clic.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#x1F4B8;</div><div class="feature-title">CA prévisionnel</div><div class="feature-desc">Tableau de bord financier en temps réel. Taux de remplissage des sessions, CA du mois, projections à 6 mois.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#x1F4C4;</div><div class="feature-title">Attestations PDF</div><div class="feature-desc">Génération en un clic des attestations de formation, recyclage, MAC et présence. Envoi direct par email à l'apprenant.</div></div>
+<!-- SECTION 2 PRODUITS -->
+<section class="section">
+  <div class="section-tag">Produits</div>
+  <h2 class="section-title">Une suite complète pour la sécurité privée</h2>
+  <p class="section-sub">Des solutions adaptées à chaque besoin du secteur de la sécurité privée.</p>
+  
+  <div class="produits-grid">
+    <div class="produit-card available">
+      <div class="produit-badge">Disponible maintenant</div>
+      <div class="produit-icon">?</div>
+      <div class="produit-title">Ges4Sec CRM</div>
+      <div class="produit-desc">Le premier CRM spécialisé pour les centres de formation en sécurité privée. Gérez vos apprenants, certifications, relances et finances en un seul outil.</div>
+      <a href="#crm" class="produit-cta">En savoir plus ?</a>
+    </div>
+    
+    <div class="produit-card coming-soon">
+      <div class="produit-badge coming">En développement</div>
+      <div class="produit-icon">?</div>
+      <div class="produit-title">Ges4Sec Mobile</div>
+      <div class="produit-desc">L'application mobile pour les entreprises de sécurité privée. Suivez vos agents, planifiez les missions et gérez les certifications sur le terrain.</div>
+      <a href="#mobile" class="produit-cta coming">Rejoindre la liste d'attente ?</a>
+    </div>
   </div>
 </section>
 
+<!-- SECTION CRM DÉTAILLÉE -->
+<section class="section" id="crm">
+  <div class="section-tag">Disponible maintenant</div>
+  <h2 class="section-title">Le premier CRM pour les centres de formation en sécurité privée</h2>
+  <p class="section-sub">Conçu avec des professionnels SSIAP pour répondre aux vrais besoins du terrain.</p>
+  
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Alertes automatiques certifications</div>
+      <div class="feature-desc">Surveillance de toutes les certifications SSIAP, Carte Pro CNAPS, SST. Les alertes partent avant que vous n'ayez à y penser.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Relances intelligentes J-180/J-90/J-30</div>
+      <div class="feature-desc">Emails automatiques avec mention réglementaire CNAPS. Personnalisés, ciblés, sans intervention manuelle.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Campagnes CPF en un clic</div>
+      <div class="feature-desc">Identifiez tous vos apprenants éligibles et lancez la campagne CPF en un seul clic quand les comptes sont rechargés.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Voie directe SSIAP 3 (Bac+)</div>
+      <div class="feature-desc">Identifiez automatiquement les apprenants Bac+ éligibles à la voie directe SSIAP 3 et contactez-les proactivement.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">CA prévisionnel temps réel</div>
+      <div class="feature-desc">Tableau de bord financier en temps réel. Taux de remplissage des sessions, CA du mois, projections à 6 mois.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Attestations PDF</div>
+      <div class="feature-desc">Génération en un clic des attestations de formation, recyclage, MAC et présence. Envoi direct par email.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING CRM -->
 <section class="pricing-section" id="pricing">
   <div class="pricing-inner">
     <div style="text-align:center">
-      <div class="section-tag">Tarifs</div>
+      <div class="section-tag">Tarifs CRM</div>
       <h2 class="section-title">Simple et transparent</h2>
       <p style="font-size:16px;color:rgba(200,220,240,0.5);margin-top:12px">Sans engagement. Résiliable à tout moment.</p>
     </div>
@@ -172,39 +284,84 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
   </div>
 </section>
 
-<section class="faq-section">
+<!-- FAQ ACCORDÉON -->
+<section class="faq-section" id="faq">
   <h2 class="faq-title">Questions fréquentes</h2>
   <div class="faq-item">
-    <button class="faq-question">Est-ce que mes données sont sécurisées ? <span>▼</span></button>
+    <button class="faq-question">Est-ce que mes données sont sécurisées ? <span>?</span></button>
     <div class="faq-answer"><p>Oui. Toutes les données sont hébergées en Europe sur des serveurs conformes RGPD. Seuls vous et vos collaborateurs autorisés y avez accès. Aucune donnée n'est partagée avec des tiers.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-question">Combien de temps faut-il pour prendre en main l'outil ? <span>▼</span></button>
+    <button class="faq-question">Combien de temps faut-il pour prendre en main l'outil ? <span>?</span></button>
     <div class="faq-answer"><p>Moins d'une heure. L'interface est conçue pour des gestionnaires de centre, pas des informaticiens. Une formation de prise en main est incluse dans tous les plans.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-question">Est-ce que je peux importer ma base d'apprenants existante ? <span>▼</span></button>
+    <button class="faq-question">Est-ce que je peux importer ma base d'apprenants existante ? <span>?</span></button>
     <div class="faq-answer"><p>Oui. Ges4Sec accepte l'import CSV compatible Excel. Vous importez toute votre base en moins de 2 minutes.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-question">Est-ce que l'outil fonctionne pour tous les types de formations ? <span>▼</span></button>
+    <button class="faq-question">Est-ce que l'outil fonctionne pour tous les types de formations ? <span>?</span></button>
     <div class="faq-answer"><p>Oui. SSIAP 1/2/3, recyclage, remise à niveau, MAC APS, TFP APS, SST, habilitation électrique et toute formation personnalisée.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-question">Que se passe-t-il si je veux résilier ? <span>▼</span></button>
+    <button class="faq-question">Que se passe-t-il si je veux résilier ? <span>?</span></button>
     <div class="faq-answer"><p>Aucun engagement. Vous résiliez quand vous voulez depuis les réglages. Vos données vous appartiennent et sont exportables à tout moment.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-question">Proposez-vous une période d'essai ? <span>▼</span></button>
+    <button class="faq-question">Proposez-vous une période d'essai ? <span>?</span></button>
     <div class="faq-answer"><p>Oui. Nous proposons 2 mois gratuits pour les centres partenaires bêta. Contactez-nous à contact@ges4sec.fr pour en bénéficier.</p></div>
   </div>
 </section>
 
+<!-- SECTION APP MOBILE -->
+<section class="mobile-section" id="mobile">
+  <div class="section-tag">En développement</div>
+  <h2 class="section-title">Ges4Sec Mobile ? Pour les entreprises de sécurité privée</h2>
+  <p class="section-sub">L'application mobile qui révolutionne la gestion des agents de sécurité sur le terrain.</p>
+  
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Suivi des agents en temps réel</div>
+      <div class="feature-desc">Géolocalisation et statut des agents pendant les missions pour une coordination optimale.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Planification intelligente</div>
+      <div class="feature-desc">Créez et modifiez les plannings en fonction des compétences et disponibilités des agents.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Alertes certifications</div>
+      <div class="feature-desc">Soyez alerté avant l'expiration des certifications de vos agents pour éviter les interruptions.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Rapports de mission mobiles</div>
+      <div class="feature-desc">Rédigez et validez les rapports d'intervention directement depuis le terrain.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">?</div>
+      <div class="feature-title">Communication instantanée</div>
+      <div class="feature-desc">Chat interne et notifications pour une communication fluide entre le bureau et le terrain.</div>
+    </div>
+  </div>
+  
+  <div class="waitlist-form">
+    <form action="mailto:contact@ges4sec.fr" method="post" enctype="text/plain">
+      <input type="email" name="email" class="waitlist-input" placeholder="Votre email professionnel" required>
+      <button type="submit" class="waitlist-btn">Rejoindre la liste d'attente ?</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer id="contact">
   <div class="logo">Ges4Sec</div>
-  <p>CRM spécialisé centres de formation sécurité privée — France 🇫🇷</p>
+  <p>Suite digitale pour la sécurité privée ? France ??</p>
   <p>contact@ges4sec.fr</p>
 </footer>
+
 <script>
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
