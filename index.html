@@ -233,12 +233,25 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
       <div class="section-tag">Tarifs CRM</div>
       <h2 class="section-title">Simple et transparent</h2>
       <p style="font-size:16px;color:rgba(200,220,240,0.5);margin-top:12px">Sans engagement. Résiliable à tout moment.</p>
+      
+      <!-- Toggle Mensuel/Annuel -->
+      <div style="display:inline-flex; align-items:center; gap:12px; margin-top:24px; background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:4px;">
+        <button id="monthly-toggle" class="billing-toggle active" style="padding:8px 20px; border:none; background:transparent; color:rgba(200,220,240,0.5); font-size:14px; font-weight:600; cursor:pointer; border-radius:8px; transition:all 0.2s;">
+          Mensuel
+        </button>
+        <button id="annual-toggle" class="billing-toggle" style="padding:8px 20px; border:none; background:transparent; color:rgba(200,220,240,0.5); font-size:14px; font-weight:600; cursor:pointer; border-radius:8px; transition:all 0.2s;">
+          Annuel
+        </button>
+      </div>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="plan-name">Starter</div>
-        <div class="plan-price">149 <span>/ mois</span></div>
-        <div class="plan-desc">Pour les centres qui démarrent leur digitalisation.</div>
+        <div class="plan-price monthly-price">149 <span>/ mois</span></div>
+        <div class="plan-price annual-price" style="display:none;">1 490 <span>/ an</span></div>
+        <div class="plan-desc monthly-desc">Pour les centres qui démarrent leur digitalisation.</div>
+        <div class="plan-desc annual-desc" style="display:none;">Pour les centres qui démarrent leur digitalisation.</div>
+        <div class="annual-badge" style="display:none; position:absolute; top:12px; right:12px; background:#22C55E; color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:100px;">2 mois offerts</div>
         <ul class="plan-features">
           <li class="highlight">Jusqu'à 150 apprenants</li>
           <li>Fiches apprenants avec voyants certifications</li>
@@ -251,15 +264,25 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
         </ul>
         <a href="https://buy.stripe.com/test_00wfZi3T33w62Ls63g18c00" 
    target="_blank"
+   class="monthly-link"
    style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid rgba(255,255,255,0.07); background:transparent; color:#E8F0F8; text-align:center; text-decoration:none; transition:all 0.2s;">
+  Commencer →
+</a>
+        <a href="#annuel-starter" 
+   target="_blank"
+   class="annual-link"
+   style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid rgba(255,255,255,0.07); background:transparent; color:#E8F0F8; text-align:center; text-decoration:none; transition:all 0.2s;">
   Commencer →
 </a>
       </div>
       <div class="pricing-card featured">
         <div class="popular-badge">LE PLUS POPULAIRE</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price">299 <span>/ mois</span></div>
-        <div class="plan-desc">Pour les centres en croissance qui veulent automatiser leur commercial.</div>
+        <div class="plan-price monthly-price">299 <span>/ mois</span></div>
+        <div class="plan-price annual-price" style="display:none;">2 990 <span>/ an</span></div>
+        <div class="plan-desc monthly-desc">Pour les centres en croissance qui veulent automatiser leur commercial.</div>
+        <div class="plan-desc annual-desc" style="display:none;">Pour les centres en croissance qui veulent automatiser leur commercial.</div>
+        <div class="annual-badge" style="display:none; position:absolute; top:12px; right:12px; background:#22C55E; color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:100px;">2 mois offerts</div>
         <ul class="plan-features">
           <li class="highlight">Apprenants illimités</li>
           <li class="highlight">Relances prédictives SSIAP 2 & 3</li>
@@ -273,14 +296,24 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
         </ul>
         <a href="https://buy.stripe.com/test_7sY4gA9dn9Uu4TAcrE18c01"
    target="_blank"
+   class="monthly-link"
    style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; text-align:center; text-decoration:none; box-shadow:0 4px 20px rgba(30,144,255,0.3); transition:all 0.2s;">
+  Commencer →
+</a>
+        <a href="#annuel-pro" 
+   target="_blank"
+   class="annual-link"
+   style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; text-align:center; text-decoration:none; box-shadow:0 4px 20px rgba(30,144,255,0.3); transition:all 0.2s;">
   Commencer →
 </a>
       </div>
       <div class="pricing-card">
         <div class="plan-name">Expert</div>
-        <div class="plan-price" style="color:#F0A500">499 <span>/ mois</span></div>
-        <div class="plan-desc">Pour les centres ambitieux qui pilotent leur activité comme une entreprise.</div>
+        <div class="plan-price monthly-price" style="color:#F0A500">499 <span>/ mois</span></div>
+        <div class="plan-price annual-price" style="display:none; color:#F0A500">4 990 <span>/ an</span></div>
+        <div class="plan-desc monthly-desc">Pour les centres ambitieux qui pilotent leur activité comme une entreprise.</div>
+        <div class="plan-desc annual-desc" style="display:none;">Pour les centres ambitieux qui pilotent leur activité comme une entreprise.</div>
+        <div class="annual-badge" style="display:none; position:absolute; top:12px; right:12px; background:#22C55E; color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:100px;">2 mois offerts</div>
         <ul class="plan-features">
           <li class="highlight">Indicateur de santé 0100</li>
           <li class="highlight">Tableau de bord financier avancé</li>
@@ -293,7 +326,14 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
         </ul>
         <a href="https://buy.stripe.com/test_fZufZigFP3w60DkdvI18c02"
    target="_blank"
+   class="monthly-link"
    style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#F0A500,#CC8800); color:#fff; text-align:center; text-decoration:none; transition:all 0.2s;">
+  Commencer →
+</a>
+        <a href="#annuel-expert" 
+   target="_blank"
+   class="annual-link"
+   style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#F0A500,#CC8800); color:#fff; text-align:center; text-decoration:none; transition:all 0.2s;">
   Commencer →
 </a>
       </div>
@@ -476,6 +516,44 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     const item = btn.parentElement;
     item.classList.toggle('open');
   });
+});
+
+// Toggle Mensuel/Annuel
+const monthlyToggle = document.getElementById('monthly-toggle');
+const annualToggle = document.getElementById('annual-toggle');
+
+monthlyToggle.addEventListener('click', () => {
+  // Activer le bouton mensuel
+  monthlyToggle.style.background = 'linear-gradient(135deg,#1E90FF,#0066CC)';
+  monthlyToggle.style.color = '#fff';
+  annualToggle.style.background = 'transparent';
+  annualToggle.style.color = 'rgba(200,220,240,0.5)';
+  
+  // Afficher les prix mensuels
+  document.querySelectorAll('.monthly-price').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.annual-price').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.monthly-desc').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.annual-desc').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.monthly-link').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.annual-link').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.annual-badge').forEach(el => el.style.display = 'none');
+});
+
+annualToggle.addEventListener('click', () => {
+  // Activer le bouton annuel
+  annualToggle.style.background = 'linear-gradient(135deg,#1E90FF,#0066CC)';
+  annualToggle.style.color = '#fff';
+  monthlyToggle.style.background = 'transparent';
+  monthlyToggle.style.color = 'rgba(200,220,240,0.5)';
+  
+  // Afficher les prix annuels
+  document.querySelectorAll('.monthly-price').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.annual-price').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.monthly-desc').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.annual-desc').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.monthly-link').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.annual-link').forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.annual-badge').forEach(el => el.style.display = 'block');
 });
 </script>
 </body>
