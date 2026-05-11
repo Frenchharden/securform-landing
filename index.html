@@ -6,6 +6,7 @@
 <title>Ges4Sec — Plateforme de gestion Centres de Formation Sécurité Privée</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta name="description" content="Ges4Sec — La première plateforme de gestion spécialisée pour les centres de formation en sécurité privée. Suivi automatique des certifications SSIAP, relances intelligentes, CA prévisionnel en temps réel.">
 <meta name="keywords" content="plateforme de gestion sécurité privée, formation SSIAP, gestion centre formation, relances certifications, CNAPS">
 <meta property="og:title" content="Ges4Sec — Plateforme de gestion Centres de Formation Sécurité Privée">
@@ -135,7 +136,7 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
   <div class="logo">Ges4Sec</div>
   <div class="nav-links">
     <a href="#crm" class="nav-link">Plateforme</a>
-    <a href="#mobile" class="nav-link">Mobile</a>
+    <a href="#entreprises" class="nav-link">Entreprises</a>
     <a href="#pricing" class="nav-link">Tarifs</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <a href="#fondateur" class="nav-link">Fondateur</a>
@@ -233,6 +234,10 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
       <div class="section-tag">Tarifs</div>
       <h2 class="section-title">Simple et transparent</h2>
       <p style="font-size:16px;color:rgba(200,220,240,0.5);margin-top:12px">Sans engagement. Résiliable à tout moment.</p>
+      <div style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.3);border-radius:100px;padding:6px 18px;">
+        <span style="color:#00C896;font-size:13px;">✓</span>
+        <span style="color:#00C896;font-size:13px;font-weight:600;">Moins cher que les outils généralistes — conçu exclusivement pour la sécurité privée</span>
+      </div>
       
       <!-- Toggle Mensuel/Annuel -->
       <div style="display:inline-flex; align-items:center; gap:12px; margin-top:24px; background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:4px;">
@@ -373,61 +378,83 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
   </div>
 </section>
 
-<!-- SECTION APP MOBILE -->
-<section class="mobile-section" id="mobile">
-  <div class="section-tag">En développement</div>
-  <h2 class="section-title">Ges4Sec Mobile ? Pour les entreprises de sécurité privée</h2>
-  <p class="section-sub">L'application mobile qui révolutionne la gestion des agents de sécurité sur le terrain.</p>
-  
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">📱</div>
-      <div class="feature-title">Suivi des agents en temps réel</div>
-      <div class="feature-desc">Géolocalisation et statut des agents pendant les missions pour une coordination optimale.</div>
+<!-- SECTION LISTE D'ATTENTE ENTREPRISES -->
+<section class="mobile-section" id="entreprises" style="background:#0B1520; max-width:100%; padding:100px 60px;">
+  <div style="max-width:680px; margin:0 auto; text-align:center;">
+
+    <!-- Badge -->
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,140,66,0.12);border:1px solid rgba(255,140,66,0.35);border-radius:100px;padding:6px 18px;margin-bottom:28px;">
+      <span style="width:7px;height:7px;border-radius:50%;background:#FF8C42;display:inline-block;animation:pulse 2s infinite;"></span>
+      <span style="color:#FF8C42;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Bientôt — GesForSec</span>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">📅</div>
-      <div class="feature-title">Planification intelligente</div>
-      <div class="feature-desc">Créez et modifiez les plannings en fonction des compétences et disponibilités des agents.</div>
+
+    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bottom:20px;color:#E8F0F8;">
+      Vous gérez une entreprise<br>de sécurité privée ?
+    </h2>
+    <p style="font-size:17px;color:rgba(200,220,240,0.65);line-height:1.75;margin-bottom:14px;max-width:520px;margin-left:auto;margin-right:auto;">
+      Suivez vos agents en conformité automatiquement.
+    </p>
+    <p style="font-size:14px;color:rgba(200,220,240,0.4);line-height:1.7;margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;">
+      SSIAP, Carte Pro CNAPS, SST — alertes avant chaque expiration. Zéro tableur, zéro oubli. Tableau de bord conformité pour toute votre équipe.
+    </p>
+
+    <!-- Features teaser -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:52px;max-width:480px;margin-left:auto;margin-right:auto;">
+      <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:13px 16px;font-size:13px;font-weight:600;color:rgba(230,240,255,0.7);">
+        <span style="font-size:18px;">🔔</span> Alertes avant expiration
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:13px 16px;font-size:13px;font-weight:600;color:rgba(230,240,255,0.7);">
+        <span style="font-size:18px;">📊</span> Dashboard conformité
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:13px 16px;font-size:13px;font-weight:600;color:rgba(230,240,255,0.7);">
+        <span style="font-size:18px;">👮</span> Suivi multi-agents
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:13px 16px;font-size:13px;font-weight:600;color:rgba(230,240,255,0.7);">
+        <span style="font-size:18px;">📤</span> Rapports exportables
+      </div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔔</div>
-      <div class="feature-title">Alertes certifications</div>
-      <div class="feature-desc">Soyez alerté avant l'expiration des certifications de vos agents pour éviter les interruptions.</div>
+
+    <!-- Formulaire liste d'attente -->
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 32px;text-align:left;">
+      <div id="waitlist-form-block">
+        <div style="font-weight:800;font-size:19px;color:#E8F0F8;margin-bottom:6px;">Soyez informé(e) en avant-première</div>
+        <div style="color:rgba(200,220,240,0.5);font-size:13px;margin-bottom:24px;line-height:1.6;">Laissez vos coordonnées — on vous contacte dès l'ouverture.</div>
+        <form id="waitlist-form" style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <input id="wl-nom" type="text" placeholder="Votre nom *" required
+              style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:#E8F0F8;border-radius:10px;padding:12px 14px;font-size:14px;width:100%;box-sizing:border-box;font-family:inherit;outline:none;">
+            <input id="wl-email" type="email" placeholder="Email professionnel *" required
+              style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:#E8F0F8;border-radius:10px;padding:12px 14px;font-size:14px;width:100%;box-sizing:border-box;font-family:inherit;outline:none;">
+          </div>
+          <input id="wl-entreprise" type="text" placeholder="Nom de l'entreprise (optionnel)"
+            style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:#E8F0F8;border-radius:10px;padding:12px 14px;font-size:14px;width:100%;box-sizing:border-box;font-family:inherit;outline:none;">
+          <div id="wl-error" style="color:#FF4D6A;font-size:13px;display:none;"></div>
+          <button type="submit" id="wl-btn"
+            style="background:#FF8C42;color:#fff;border:none;border-radius:10px;padding:14px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;transition:background 0.2s;">
+            Je suis intéressé(e) →
+          </button>
+        </form>
+      </div>
+      <div id="waitlist-success" style="display:none;text-align:center;padding:20px 0;">
+        <div style="font-size:44px;margin-bottom:16px;">✅</div>
+        <div style="font-weight:800;font-size:20px;color:#E8F0F8;margin-bottom:10px;">Vous êtes sur la liste !</div>
+        <div style="color:rgba(200,220,240,0.55);font-size:14px;line-height:1.6;">
+          Vous serez parmi les premiers informés du lancement de GesForSec.
+        </div>
+      </div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">📝</div>
-      <div class="feature-title">Rapports de mission mobiles</div>
-      <div class="feature-desc">Rédigez et validez les rapports d'intervention directement depuis le terrain.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💬</div>
-      <div class="feature-title">Communication instantanée</div>
-      <div class="feature-desc">Chat interne et notifications pour une communication fluide entre le bureau et le terrain.</div>
-    </div>
+
   </div>
-  
-  <div style="margin-top:24px; max-width:400px; display:none;">
-  <iframe 
-    data-tally-src="https://tally.so/embed/lb7XW5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-    loading="lazy"
-    width="100%"
-    height="220"
-    frameborder="0"
-    style="border:none; background:transparent;">
-  </iframe>
-  <script>
-    var d=document,w="https://tally.so/widgets/embed.js",
-    v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};
-    if("undefined"!=typeof Tally)v();
-    else if(d.querySelector('script[src="'+w+'"]')==null){
-      var s=d.createElement("script");
-      s.src=w;s.onload=v;s.onerror=v;
-      d.body.appendChild(s);
-    }
-  </script>
-</div>
 </section>
+
+<style>
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+@media(max-width:900px){
+  #entreprises { padding:60px 24px !important; }
+  #entreprises > div > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+  #waitlist-form > div { grid-template-columns:1fr !important; }
+}
+</style>
 
 <!-- SECTION FONDATEUR -->
 <section style="padding:100px 60px; max-width:900px; margin:0 auto;" id="fondateur">
@@ -499,6 +526,29 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
   </div>
 </section>
 
+<!-- CTA FINAL -->
+<section style="padding:100px 60px;text-align:center;background:linear-gradient(135deg,rgba(30,144,255,0.06) 0%,rgba(6,13,20,0) 100%);">
+  <div style="max-width:640px;margin:0 auto;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1E90FF;margin-bottom:20px;">
+      Disponible maintenant
+    </div>
+    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-1.5px;margin-bottom:20px;color:#E8F0F8;line-height:1.1;">
+      Votre centre de formation<br>mérite mieux qu'un tableur.
+    </h2>
+    <p style="font-size:16px;color:rgba(200,220,240,0.55);line-height:1.75;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;">
+      Accédez à la plateforme dès aujourd'hui. Prise en main en moins d'une heure.
+    </p>
+    <a href="https://app.ges4sec.fr" target="_blank"
+       style="display:inline-block;background:linear-gradient(135deg,#1E90FF,#0055CC);color:#fff;padding:17px 48px;border-radius:14px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 6px 30px rgba(30,144,255,0.35);transition:transform 0.2s;"
+       onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      Accéder à app.ges4sec.fr →
+    </a>
+    <div style="margin-top:18px;font-size:13px;color:rgba(200,220,240,0.35);">
+      Sans engagement · Résiliable à tout moment
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contact">
   <div class="logo">Ges4Sec</div>
@@ -511,6 +561,43 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
 </footer>
 
 <script>
+// ── Supabase liste d'attente ──────────────────────────────────────────────
+const _supa = supabase.createClient(
+  'https://efzkuoxbrmkejhgcqzkb.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmemt1b3hicm1rZWpoZ2NxemtiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4Njc0MTcsImV4cCI6MjA4OTQ0MzQxN30.Rm7zjVBrykmVw8TrtMJpxPjJFQQfciZYzx5xbVwjnJM'
+);
+
+document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('wl-btn');
+  const errEl = document.getElementById('wl-error');
+  const nom = document.getElementById('wl-nom').value.trim();
+  const email = document.getElementById('wl-email').value.trim();
+  const entreprise = document.getElementById('wl-entreprise').value.trim();
+
+  errEl.style.display = 'none';
+  btn.textContent = 'Enregistrement…';
+  btn.disabled = true;
+
+  const { error } = await _supa.from('liste_attente').insert([{
+    nom, email,
+    entreprise: entreprise || null,
+    source: 'landing-ges4sec'
+  }]);
+
+  if (error) {
+    errEl.textContent = 'Une erreur est survenue. Réessayez ou écrivez à contact@ges4sec.fr';
+    errEl.style.display = 'block';
+    btn.textContent = 'Je suis intéressé(e) →';
+    btn.disabled = false;
+    return;
+  }
+
+  document.getElementById('waitlist-form-block').style.display = 'none';
+  document.getElementById('waitlist-success').style.display = 'block';
+});
+
+// ── Nav scroll + FAQ ─────────────────────────────────────────────────────
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
