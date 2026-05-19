@@ -135,8 +135,9 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
 <nav>
   <div class="logo">Ges4Sec</div>
   <div class="nav-links">
-    <a href="#crm" class="nav-link">Plateforme</a>
-    <a href="#entreprises" class="nav-link">Entreprises</a>
+    <a href="#crm" class="nav-link">Plateforme CRM</a>
+    <a href="#agents" class="nav-link" style="color:#1D9E75;font-weight:600;">Ges4Sec Agents ✦</a>
+    <a href="#ecosysteme" class="nav-link">Écosystème</a>
     <a href="#pricing" class="nav-link">Tarifs</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <a href="#fondateur" class="nav-link">Fondateur</a>
@@ -177,12 +178,12 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
       <a href="#crm" class="produit-cta">En savoir plus 🛡️</a>
     </div>
     
-    <div class="produit-card coming-soon">
-      <div class="produit-badge coming">En développement</div>
-      <div class="produit-icon">📱</div>
-      <div class="produit-title">Ges4Sec Mobile</div>
-      <div class="produit-desc">L'application mobile pour les entreprises de sécurité privée. Suivez vos agents, planifiez les missions et gérez les certifications sur le terrain.</div>
-      <a href="#mobile" class="produit-cta coming">Rejoindre la liste d'attente 📝</a>
+    <div class="produit-card available" style="border-color:rgba(29,158,117,0.4);">
+      <div class="produit-badge" style="background:linear-gradient(135deg,#1D9E75,#15775a);">✦ Nouveau</div>
+      <div class="produit-icon">👮</div>
+      <div class="produit-title">Ges4Sec Agents</div>
+      <div class="produit-desc">L'application dédiée aux entreprises de sécurité privée. Planifiez vos vacations, gérez les agents, suivez les certifications et pointez les prises de service via QR code.</div>
+      <a href="https://agents.ges4sec.fr" target="_blank" class="produit-cta" style="background:linear-gradient(135deg,#1D9E75,#15775a);">Accéder à agents.ges4sec.fr 👮</a>
     </div>
   </div>
 </section>
@@ -224,6 +225,112 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
       <div class="feature-title">Attestations PDF</div>
       <div class="feature-desc">Génération en un clic des attestations de formation, recyclage, MAC et présence. Envoi direct par email.</div>
     </div>
+  </div>
+</section>
+
+<!-- SECTION GES4SEC AGENTS -->
+<section class="section" id="agents" style="background:#06100E;">
+  <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(29,158,117,0.12);border:1px solid rgba(29,158,117,0.35);border-radius:100px;padding:6px 18px;margin-bottom:20px;">
+    <span style="width:7px;height:7px;border-radius:50%;background:#1D9E75;display:inline-block;animation:pulse 2s infinite;"></span>
+    <span style="color:#1D9E75;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Disponible — agents.ges4sec.fr</span>
+  </div>
+  <h2 class="section-title" style="color:#E8F0F8;">Pour les entreprises de sécurité</h2>
+  <p class="section-sub">Gérez vos agents, planifiez vos vacations, suivez les certifications — depuis un seul outil pensé pour le terrain.</p>
+
+  <div class="features-grid">
+    <div class="feature-card" style="border-color:rgba(29,158,117,0.15);">
+      <div class="feature-icon" style="background:rgba(29,158,117,0.12);">📅</div>
+      <div class="feature-title">Planning vacations avec notifications auto</div>
+      <div class="feature-desc">Publiez une vacation libre et notifiez automatiquement tous les agents disponibles par email. Ils acceptent ou refusent en un clic depuis leur smartphone.</div>
+    </div>
+    <div class="feature-card" style="border-color:rgba(29,158,117,0.15);">
+      <div class="feature-icon" style="background:rgba(29,158,117,0.12);">📱</div>
+      <div class="feature-title">Prise de service QR code</div>
+      <div class="feature-desc">Chaque site génère un QR code unique. L'agent le scanne à son arrivée pour pointer sa prise de service. Retards et justificatifs gérés automatiquement.</div>
+    </div>
+    <div class="feature-card" style="border-color:rgba(29,158,117,0.15);">
+      <div class="feature-icon" style="background:rgba(29,158,117,0.12);">🎖️</div>
+      <div class="feature-title">Suivi certifications synchronisé</div>
+      <div class="feature-desc">SSIAP, Carte Pro CNAPS, SST, MAC APS — badges d'alerte 90 jours avant expiration. Synchronisation automatique avec les centres de formation partenaires.</div>
+    </div>
+    <div class="feature-card" style="border-color:rgba(29,158,117,0.15);">
+      <div class="feature-icon" style="background:rgba(29,158,117,0.12);">⚠️</div>
+      <div class="feature-title">Gestion retards et absences</div>
+      <div class="feature-desc">Chaque retard est enregistré avec l'heure réelle de pointage. L'agent soumet son motif et son justificatif directement depuis l'app. Historique consultable.</div>
+    </div>
+    <div class="feature-card" style="border-color:rgba(29,158,117,0.15);">
+      <div class="feature-icon" style="background:rgba(29,158,117,0.12);">🦺</div>
+      <div class="feature-title">Renouvellement tenues 6 mois</div>
+      <div class="feature-desc">Suivi automatique de l'attribution des tenues par agent. Alerte avant échéance de renouvellement. Génération du bon de renouvellement en un clic.</div>
+    </div>
+    <div class="feature-card" style="border-color:rgba(29,158,117,0.15);">
+      <div class="feature-icon" style="background:rgba(29,158,117,0.12);">📢</div>
+      <div class="feature-title">Consignes de site numérique</div>
+      <div class="feature-desc">Le planificateur publie des consignes par site. Les agents les consultent sur leur espace et marquent chaque consigne comme lue. Badge "Non lu" pour ne rien manquer.</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:60px;">
+    <a href="https://agents.ges4sec.fr" target="_blank"
+       style="display:inline-block;background:linear-gradient(135deg,#1D9E75,#15775a);color:#fff;padding:17px 48px;border-radius:14px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 6px 30px rgba(29,158,117,0.35);"
+       onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      Accéder à agents.ges4sec.fr →
+    </a>
+    <div style="margin-top:14px;font-size:13px;color:rgba(200,220,240,0.35);">Accès sur invitation · Application PWA installable</div>
+  </div>
+</section>
+
+<!-- SECTION ÉCOSYSTÈME -->
+<section class="section" id="ecosysteme">
+  <div class="section-tag">Écosystème</div>
+  <h2 class="section-title">5 acteurs, une suite intégrée</h2>
+  <p class="section-sub">Ges4Sec connecte tous les acteurs de la sécurité privée dans un écosystème digital cohérent.</p>
+
+  <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:48px;">
+
+    <div style="flex:1;min-width:180px;max-width:210px;background:rgba(30,144,255,0.07);border:1px solid rgba(30,144,255,0.25);border-radius:20px;padding:28px 20px;text-align:center;">
+      <div style="font-size:40px;margin-bottom:12px;">🏫</div>
+      <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#E8F0F8;margin-bottom:8px;">Centre de formation</div>
+      <div style="font-size:12px;color:rgba(200,220,240,0.5);line-height:1.6;">Gère les apprenants, certifications, sessions et finances via la Plateforme CRM.</div>
+      <div style="margin-top:14px;"><a href="https://app.ges4sec.fr" target="_blank" style="font-size:11px;color:#1E90FF;font-weight:700;text-decoration:none;">app.ges4sec.fr →</a></div>
+    </div>
+
+    <div style="display:flex;align-items:center;font-size:22px;color:rgba(255,255,255,0.2);padding:0 4px;">⟷</div>
+
+    <div style="flex:1;min-width:180px;max-width:210px;background:rgba(29,158,117,0.07);border:1px solid rgba(29,158,117,0.25);border-radius:20px;padding:28px 20px;text-align:center;">
+      <div style="font-size:40px;margin-bottom:12px;">🏢</div>
+      <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#E8F0F8;margin-bottom:8px;">Entreprise de sécurité</div>
+      <div style="font-size:12px;color:rgba(200,220,240,0.5);line-height:1.6;">Planifie les vacations, gère les agents et suit la conformité via Ges4Sec Agents.</div>
+      <div style="margin-top:14px;"><a href="https://agents.ges4sec.fr" target="_blank" style="font-size:11px;color:#1D9E75;font-weight:700;text-decoration:none;">agents.ges4sec.fr →</a></div>
+    </div>
+
+    <div style="display:flex;align-items:center;font-size:22px;color:rgba(255,255,255,0.2);padding:0 4px;">⟷</div>
+
+    <div style="flex:1;min-width:180px;max-width:210px;background:rgba(240,165,0,0.07);border:1px solid rgba(240,165,0,0.2);border-radius:20px;padding:28px 20px;text-align:center;">
+      <div style="font-size:40px;margin-bottom:12px;">🎓</div>
+      <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#E8F0F8;margin-bottom:8px;">Formateur</div>
+      <div style="font-size:12px;color:rgba(200,220,240,0.5);line-height:1.6;">Accède à son profil, ses sessions et ses documents via le portail formateur.</div>
+      <div style="margin-top:14px;"><span style="font-size:11px;color:rgba(240,165,0,0.6);font-weight:700;">Portail dédié</span></div>
+    </div>
+
+    <div style="display:flex;align-items:center;font-size:22px;color:rgba(255,255,255,0.2);padding:0 4px;">⟷</div>
+
+    <div style="flex:1;min-width:180px;max-width:210px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:20px;padding:28px 20px;text-align:center;">
+      <div style="font-size:40px;margin-bottom:12px;">👨‍🎓</div>
+      <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#E8F0F8;margin-bottom:8px;">Apprenant</div>
+      <div style="font-size:12px;color:rgba(200,220,240,0.5);line-height:1.6;">Consulte ses certifications, attestations et évaluations via son espace personnel.</div>
+      <div style="margin-top:14px;"><span style="font-size:11px;color:rgba(167,139,250,0.6);font-weight:700;">Portail apprenant</span></div>
+    </div>
+
+    <div style="display:flex;align-items:center;font-size:22px;color:rgba(255,255,255,0.2);padding:0 4px;">⟷</div>
+
+    <div style="flex:1;min-width:180px;max-width:210px;background:rgba(29,158,117,0.07);border:1px solid rgba(29,158,117,0.25);border-radius:20px;padding:28px 20px;text-align:center;">
+      <div style="font-size:40px;margin-bottom:12px;">👮</div>
+      <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#E8F0F8;margin-bottom:8px;">Agent de sécurité</div>
+      <div style="font-size:12px;color:rgba(200,220,240,0.5);line-height:1.6;">Pointe ses prises de service, gère ses disponibilités et consulte ses vacations.</div>
+      <div style="margin-top:14px;"><a href="https://agents.ges4sec.fr" target="_blank" style="font-size:11px;color:#1D9E75;font-weight:700;text-decoration:none;">agents.ges4sec.fr →</a></div>
+    </div>
+
   </div>
 </section>
 
