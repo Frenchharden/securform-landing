@@ -25,7 +25,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 60px; di
 .nav-link:hover { color:#1E90FF; }
 .nav-cta { background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; padding:10px 22px; border-radius:10px; text-decoration:none; font-weight:600; font-size:13px; }
 
-/* Hero Marque */
+/* Hero */
 .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:120px 60px 80px; }
 .hero h1 { font-family:'Syne',sans-serif; font-size:clamp(36px,6vw,68px); font-weight:800; line-height:1.05; letter-spacing:-2px; margin-bottom:24px; color:#E8F0F8; }
 .hero-sub { font-size:18px; color:#B8D0E8; max-width:560px; line-height:1.7; margin-bottom:40px; }
@@ -45,20 +45,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 60px; di
 .section-tag { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1E90FF; margin-bottom:16px; }
 .section-title { font-family:'Syne',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:800; letter-spacing:-1px; margin-bottom:16px; }
 .section-sub { font-size:16px; color:rgba(200,220,240,0.5); max-width:500px; line-height:1.7; margin-bottom:60px; }
-
-/* Produits Grid */
-.produits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(400px,1fr)); gap:30px; margin-top:60px; }
-.produit-card { background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.07); border-radius:24px; padding:40px; transition:transform 0.2s; position:relative; }
-.produit-card:hover { transform:translateY(-4px); border-color:rgba(30,144,255,0.3); }
-.produit-card.available { border-color:rgba(30,144,255,0.4); }
-.produit-card.coming-soon { opacity:0.8; }
-.produit-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; font-size:11px; font-weight:700; padding:5px 14px; border-radius:100px; white-space:nowrap; }
-.produit-badge.coming { background:linear-gradient(135deg,#FF8C42,#CC6B2F); }
-.produit-icon { font-size:48px; margin-bottom:20px; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; }
-.produit-title { font-family:'Syne',sans-serif; font-size:24px; font-weight:800; margin-bottom:12px; }
-.produit-desc { font-size:14px; color:rgba(200,220,240,0.5); line-height:1.7; margin-bottom:24px; }
-.produit-cta { background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; padding:12px 24px; border-radius:10px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; }
-.produit-cta.coming { background:linear-gradient(135deg,#FF8C42,#CC6B2F); }
 
 /* Features Grid */
 .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; }
@@ -105,8 +91,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 60px; di
 
 /* Mobile Section */
 .mobile-section { padding:100px 60px; max-width:800px; margin:0 auto; text-align:center; }
-.waitlist-form { max-width:400px; margin:40px auto 0; }
-.waitlist-input { width:100%; padding:16px; border-radius:12px; border:1px solid rgba(255,255,255,0.07); background:rgba(255,255,255,0.035); color:#E8F0F8; font-size:16px; margin-bottom:16px; }
 .waitlist-btn { width:100%; padding:16px; border-radius:12px; background:linear-gradient(135deg,#FF8C42,#CC6B2F); color:#fff; border:none; font-size:16px; font-weight:600; cursor:pointer; transition:transform 0.2s; }
 .waitlist-btn:hover { transform:translateY(-2px); }
 
@@ -114,23 +98,29 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 60px; di
 footer { padding:40px 60px; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 footer p { font-size:13px; color:rgba(200,220,240,0.5); }
 
+/* Animations */
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
 /* Responsive */
-@media(max-width:900px) { 
-  .pricing-grid { grid-template-columns:1fr; max-width:420px; margin:60px auto 0; } 
-  .produits-grid { grid-template-columns:1fr; } 
-  .nav-links { display:none; } 
-  nav { padding:16px 24px; } 
-  .hero { padding:100px 24px 60px; } 
-  .stats-bar { gap:30px; padding:30px 24px; } 
-  .section { padding:60px 24px; } 
-  .pricing-section { padding:60px 24px; } 
-  .mobile-section { padding:60px 24px; } 
-  footer { padding:30px 24px; } 
-  .faq-section { padding:60px 24px; } 
+@media(max-width:900px) {
+  .pricing-grid { grid-template-columns:1fr; max-width:420px; margin:60px auto 0; }
+  .nav-links { display:none; }
+  nav { padding:16px 24px; }
+  .hero { padding:100px 24px 60px; }
+  .stats-bar { gap:30px; padding:30px 24px; }
+  .section { padding:60px 24px; }
+  .pricing-section { padding:60px 24px; }
+  .mobile-section { padding:60px 24px; }
+  footer { padding:30px 24px; }
+  .faq-section { padding:60px 24px; }
+  #entreprises { padding:60px 24px !important; }
+  #entreprises > div > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+  #waitlist-form > div { grid-template-columns:1fr !important; }
 }
 </style>
 </head>
 <body>
+
 <!-- NAVIGATION -->
 <nav>
   <div class="logo">Ges4Sec</div>
@@ -146,55 +136,30 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
   <a href="https://app.ges4sec.fr" class="nav-cta">Accéder à la plateforme</a>
 </nav>
 
-<!-- HERO MARQUE -->
+<!-- HERO -->
 <section class="hero">
   <h1>La suite digitale de la sécurité privée</h1>
   <p class="hero-sub">Ges4Sec développe des outils pensés par des professionnels du terrain pour les acteurs de la sécurité privée en France.</p>
   <div class="hero-ctas">
     <a href="#crm" class="btn-primary">Découvrir la plateforme &#128737;</a>
-    <a href="#mobile" class="btn-secondary">Découvrir l'app mobile &#128241;</a>
+    <a href="#agents" class="btn-secondary">Découvrir Ges4Sec Agents &#128110;</a>
   </div>
 </section>
 
 <!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat-item"><span class="stat-number">1 500+</span><div class="stat-label">centres</div></div>
-  <div class="stat-item"><span class="stat-number">0</span><div class="stat-label">outil existant</div></div>
+  <div class="stat-item"><span class="stat-number">1 500+</span><div class="stat-label">centres en France</div></div>
+  <div class="stat-item"><span class="stat-number">1er</span><div class="stat-label">outil dédié sécurité privée</div></div>
   <div class="stat-item"><span class="stat-number">10 ans</span><div class="stat-label">terrain</div></div>
   <div class="stat-item"><span class="stat-number">5×</span><div class="stat-label">ROI</div></div>
 </div>
-
-<!-- SECTION 2 PRODUITS -->
-<section class="section">
-  <div class="section-tag">Produits</div>
-  <h2 class="section-title">Une suite complète pour la sécurité privée</h2>
-  <p class="section-sub">Des solutions adaptées à chaque besoin du secteur de la sécurité privée.</p>
-  
-  <div class="produits-grid">
-    <div class="produit-card available">
-      <div class="produit-badge">Disponible maintenant</div>
-      <div class="produit-icon">🛡️</div>
-      <div class="produit-title">Ges4Sec Plateforme</div>
-      <div class="produit-desc">La première plateforme de gestion spécialisée pour les centres de formation en sécurité privée. Gérez vos apprenants, certifications, relances et finances en un seul outil.</div>
-      <a href="#crm" class="produit-cta">En savoir plus 🛡️</a>
-    </div>
-    
-    <div class="produit-card available" style="border-color:rgba(29,158,117,0.4);">
-      <div class="produit-badge" style="background:linear-gradient(135deg,#1D9E75,#15775a);">✦ Nouveau</div>
-      <div class="produit-icon">👮</div>
-      <div class="produit-title">Ges4Sec Agents</div>
-      <div class="produit-desc">L'application dédiée aux entreprises de sécurité privée. Planifiez vos vacations, gérez les agents, suivez les certifications et pointez les prises de service via QR code.</div>
-      <a href="https://agents.ges4sec.fr" target="_blank" class="produit-cta" style="background:linear-gradient(135deg,#1D9E75,#15775a);">Accéder à agents.ges4sec.fr 👮</a>
-    </div>
-  </div>
-</section>
 
 <!-- SECTION PLATEFORME DÉTAILLÉE -->
 <section class="section" id="crm">
   <div class="section-tag">Disponible maintenant</div>
   <h2 class="section-title">La première plateforme de gestion pour les centres de formation en sécurité privée</h2>
   <p class="section-sub">Conçu avec des professionnels SSIAP pour répondre aux vrais besoins du terrain.</p>
-  
+
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">📊</div>
@@ -335,6 +300,73 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
   </div>
 </section>
 
+<!-- SECTION FONDATEUR -->
+<section style="padding:100px 60px; max-width:900px; margin:0 auto;" id="fondateur">
+
+  <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1E90FF; margin-bottom:40px; text-align:center;">
+    Le fondateur
+  </div>
+
+  <div style="display:flex; gap:60px; align-items:flex-start; flex-wrap:wrap;">
+
+    <div style="flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:14px;">
+      <img src="./photo.jpg.jpg"
+           alt="Stevens Ayouma — Fondateur Ges4Sec"
+           style="width:180px; height:180px; border-radius:50%; object-fit:cover; object-position:center top; border:2px solid rgba(30,144,255,0.25); display:block;">
+      <div style="display:flex; flex-direction:column; gap:6px; width:180px;">
+        <div style="background:rgba(30,144,255,0.15); border:1px solid rgba(30,144,255,0.3); border-radius:8px; padding:7px 12px; font-size:12px; color:#E8F0F8; font-weight:700; text-align:center;">SSIAP 3</div>
+        <div style="background:rgba(30,144,255,0.15); border:1px solid rgba(30,144,255,0.3); border-radius:8px; padding:7px 12px; font-size:12px; color:#E8F0F8; font-weight:700; text-align:center;">Formateur agr&#xE9;&#xE9;</div>
+        <div style="background:rgba(30,144,255,0.15); border:1px solid rgba(30,144,255,0.3); border-radius:8px; padding:7px 12px; font-size:12px; color:#E8F0F8; font-weight:700; text-align:center;">Expert Strat&#xE9;gie Digitale &#x2014; Niv. 7</div>
+      </div>
+    </div>
+
+    <div style="flex:1; min-width:280px;">
+      <h2 style="font-family:'Syne',sans-serif; font-size:36px; font-weight:800; letter-spacing:-1.5px; margin-bottom:6px; color:#E8F0F8;">
+        Stevens Ayouma
+      </h2>
+      <p style="font-size:14px; color:rgba(200,220,240,0.55); font-weight:500; margin-bottom:28px;">
+        Fondateur de Ges4Sec &#xB7; &#xCE;le-de-France
+      </p>
+
+      <div style="border-left:3px solid #1E90FF; padding:14px 20px; margin-bottom:24px; background:rgba(30,144,255,0.06); border-radius:0 10px 10px 0;">
+        <p style="font-size:15px; color:#E8F0F8; line-height:1.75; font-style:italic;">
+          "J'ai construit Ges4Sec pour r&#xE9;soudre un probl&#xE8;me que j'ai v&#xE9;cu de l'int&#xE9;rieur &#x2014; pas comme un d&#xE9;veloppeur qui d&#xE9;couvre le secteur, mais comme un professionnel qui le conna&#xEE;t depuis 10 ans."
+        </p>
+      </div>
+
+      <p style="font-size:14px; color:#C8DCF0; line-height:1.9; margin-bottom:16px;">
+        10 ans sur le terrain &#x2014; gestionnaire de 270 logements en &#xCE;le-de-France.
+      </p>
+
+      <p style="font-size:14px; color:#C8DCF0; line-height:1.9; margin-bottom:28px;">
+        Formateur agréé SSIAP et titulaire d'un MBA en Stratégie Digitale, j'ai travaillé à l'Université Paris-Dauphine | PSL comme assistant marketing et communication. C'est lors de cette expérience que j'ai découvert toute la puissance d'une plateforme de gestion &#x2014; et l'idée de Ges4Sec a germé.
+
+        Mon ambition est de faire de Ges4Sec un véritable écosystème digital dans un secteur qui peine encore à se digitaliser.
+      </p>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px;">
+        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Christian Dior</span>
+        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Balenciaga</span>
+        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">JO Paris 2024</span>
+        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Parc des Princes</span>
+        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Paris Dauphine PSL</span>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/in/stevens-ayouma-922681184/" target="_blank"
+           style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1E90FF,#0055BB); color:#fff; padding:11px 22px; border-radius:10px; text-decoration:none; font-size:13px; font-weight:600; box-shadow:0 3px 14px rgba(30,144,255,0.25);">
+          &#x1F517; LinkedIn
+        </a>
+        <a href="mailto:contact@ges4sec.fr"
+           style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#E8F0F8; padding:11px 22px; border-radius:10px; text-decoration:none; font-size:13px; font-weight:600;">
+          &#x1F5E9; contact@ges4sec.fr
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
   <div class="pricing-inner">
@@ -346,7 +378,7 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
         <span style="color:#00C896;font-size:13px;">✓</span>
         <span style="color:#00C896;font-size:13px;font-weight:600;">Moins cher que les outils généralistes — conçu exclusivement pour la sécurité privée</span>
       </div>
-      
+
       <!-- Toggle Mensuel/Annuel -->
       <div style="display:inline-flex; align-items:center; gap:12px; margin-top:24px; background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:4px;">
         <button id="monthly-toggle" class="billing-toggle active" style="padding:8px 20px; border:none; background:transparent; color:rgba(200,220,240,0.5); font-size:14px; font-weight:600; cursor:pointer; border-radius:8px; transition:all 0.2s;">
@@ -375,18 +407,18 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
           <li>Attestations PDF</li>
           <li>Authentification sécurisée</li>
         </ul>
-        <a href="https://buy.stripe.com/test_00wfZi3T33w62Ls63g18c00" 
-   target="_blank"
-   class="monthly-link"
-   style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid rgba(255,255,255,0.07); background:transparent; color:#E8F0F8; text-align:center; text-decoration:none; transition:all 0.2s;">
-  Commencer →
-</a>
-        <a href="https://buy.stripe.com/test_bJeeVe89jd6G99Q8bo18c03" 
-   target="_blank"
-   class="annual-link"
-   style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid rgba(255,255,255,0.07); background:transparent; color:#E8F0F8; text-align:center; text-decoration:none; transition:all 0.2s;">
-  Commencer →
-</a>
+        <a href="https://buy.stripe.com/test_00wfZi3T33w62Ls63g18c00"
+           target="_blank"
+           class="monthly-link"
+           style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid rgba(255,255,255,0.07); background:transparent; color:#E8F0F8; text-align:center; text-decoration:none; transition:all 0.2s;">
+          Commencer →
+        </a>
+        <a href="https://buy.stripe.com/test_bJeeVe89jd6G99Q8bo18c03"
+           target="_blank"
+           class="annual-link"
+           style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid rgba(255,255,255,0.07); background:transparent; color:#E8F0F8; text-align:center; text-decoration:none; transition:all 0.2s;">
+          Commencer →
+        </a>
       </div>
       <div class="pricing-card featured">
         <div class="popular-badge">LE PLUS POPULAIRE</div>
@@ -408,17 +440,17 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
           <li>Tout le plan Starter</li>
         </ul>
         <a href="https://buy.stripe.com/test_7sY4gA9dn9Uu4TAcrE18c01"
-   target="_blank"
-   class="monthly-link"
-   style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; text-align:center; text-decoration:none; box-shadow:0 4px 20px rgba(30,144,255,0.3); transition:all 0.2s;">
-  Commencer →
-</a>
-        <a href="https://buy.stripe.com/test_4gM7sM4X75EebhYajw18c04" 
-   target="_blank"
-   class="annual-link"
-   style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; text-align:center; text-decoration:none; box-shadow:0 4px 20px rgba(30,144,255,0.3); transition:all 0.2s;">
-  Commencer →
-</a>
+           target="_blank"
+           class="monthly-link"
+           style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; text-align:center; text-decoration:none; box-shadow:0 4px 20px rgba(30,144,255,0.3); transition:all 0.2s;">
+          Commencer →
+        </a>
+        <a href="https://buy.stripe.com/test_4gM7sM4X75EebhYajw18c04"
+           target="_blank"
+           class="annual-link"
+           style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#1E90FF,#0066CC); color:#fff; text-align:center; text-decoration:none; box-shadow:0 4px 20px rgba(30,144,255,0.3); transition:all 0.2s;">
+          Commencer →
+        </a>
       </div>
       <div class="pricing-card">
         <div class="plan-name">Expert</div>
@@ -438,17 +470,17 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
           <li>Tout le plan Pro</li>
         </ul>
         <a href="https://buy.stripe.com/test_fZufZigFP3w60DkdvI18c02"
-   target="_blank"
-   class="monthly-link"
-   style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#F0A500,#CC8800); color:#fff; text-align:center; text-decoration:none; transition:all 0.2s;">
-  Commencer →
-</a>
-        <a href="https://buy.stripe.com/test_6oUcN6dtDd6Gfye2R418c05" 
-   target="_blank"
-   class="annual-link"
-   style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#F0A500,#CC8800); color:#fff; text-align:center; text-decoration:none; transition:all 0.2s;">
-  Commencer →
-</a>
+           target="_blank"
+           class="monthly-link"
+           style="display:block; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#F0A500,#CC8800); color:#fff; text-align:center; text-decoration:none; transition:all 0.2s;">
+          Commencer →
+        </a>
+        <a href="https://buy.stripe.com/test_6oUcN6dtDd6Gfye2R418c05"
+           target="_blank"
+           class="annual-link"
+           style="display:none; width:100%; padding:13px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; border:none; background:linear-gradient(135deg,#F0A500,#CC8800); color:#fff; text-align:center; text-decoration:none; transition:all 0.2s;">
+          Commencer →
+        </a>
       </div>
     </div>
     <div class="roi-banner">
@@ -490,10 +522,9 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
 <section class="mobile-section" id="entreprises" style="background:#0B1520; max-width:100%; padding:100px 60px;">
   <div style="max-width:680px; margin:0 auto; text-align:center;">
 
-    <!-- Badge -->
     <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,140,66,0.12);border:1px solid rgba(255,140,66,0.35);border-radius:100px;padding:6px 18px;margin-bottom:28px;">
       <span style="width:7px;height:7px;border-radius:50%;background:#FF8C42;display:inline-block;animation:pulse 2s infinite;"></span>
-      <span style="color:#FF8C42;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Bientôt — GesForSec</span>
+      <span style="color:#FF8C42;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Bientôt — Ges4Sec Agents</span>
     </div>
 
     <h2 style="font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bottom:20px;color:#E8F0F8;">
@@ -506,7 +537,6 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
       SSIAP, Carte Pro CNAPS, SST — alertes avant chaque expiration. Zéro tableur, zéro oubli. Tableau de bord conformité pour toute votre équipe.
     </p>
 
-    <!-- Features teaser -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:52px;max-width:480px;margin-left:auto;margin-right:auto;">
       <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:13px 16px;font-size:13px;font-weight:600;color:rgba(230,240,255,0.7);">
         <span style="font-size:18px;">🔔</span> Alertes avant expiration
@@ -522,7 +552,6 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
       </div>
     </div>
 
-    <!-- Formulaire liste d'attente -->
     <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 32px;text-align:left;">
       <div id="waitlist-form-block">
         <div style="font-weight:800;font-size:19px;color:#E8F0F8;margin-bottom:6px;">Soyez informé(e) en avant-première</div>
@@ -547,87 +576,8 @@ footer p { font-size:13px; color:rgba(200,220,240,0.5); }
         <div style="font-size:44px;margin-bottom:16px;">✅</div>
         <div style="font-weight:800;font-size:20px;color:#E8F0F8;margin-bottom:10px;">Vous êtes sur la liste !</div>
         <div style="color:rgba(200,220,240,0.55);font-size:14px;line-height:1.6;">
-          Vous serez parmi les premiers informés du lancement de GesForSec.
+          Vous serez parmi les premiers informés du lancement de Ges4Sec Agents.
         </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<style>
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-@media(max-width:900px){
-  #entreprises { padding:60px 24px !important; }
-  #entreprises > div > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
-  #waitlist-form > div { grid-template-columns:1fr !important; }
-}
-</style>
-
-<!-- SECTION FONDATEUR -->
-<section style="padding:100px 60px; max-width:900px; margin:0 auto;" id="fondateur">
-
-  <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#1E90FF; margin-bottom:40px; text-align:center;">
-    Le fondateur
-  </div>
-
-  <div style="display:flex; gap:60px; align-items:flex-start; flex-wrap:wrap;">
-
-    <div style="flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:14px;">
-      <img src="./photo.jpg.jpg" 
-     alt="Stevens Ayouma — Fondateur Ges4Sec"
-     style="width:180px; height:180px; border-radius:50%; object-fit:cover; object-position:center top; border:2px solid rgba(30,144,255,0.25); display:block;">
-      <div style="display:flex; flex-direction:column; gap:6px; width:180px;">
-        <div style="background:rgba(30,144,255,0.15); border:1px solid rgba(30,144,255,0.3); border-radius:8px; padding:7px 12px; font-size:12px; color:#E8F0F8; font-weight:700; text-align:center;">SSIAP 3</div>
-        <div style="background:rgba(30,144,255,0.15); border:1px solid rgba(30,144,255,0.3); border-radius:8px; padding:7px 12px; font-size:12px; color:#E8F0F8; font-weight:700; text-align:center;">Formateur agr&#xE9;&#xE9;</div>
-        <div style="background:rgba(30,144,255,0.15); border:1px solid rgba(30,144,255,0.3); border-radius:8px; padding:7px 12px; font-size:12px; color:#E8F0F8; font-weight:700; text-align:center;">Expert Strat&#xE9;gie Digitale &#x2014; Niv. 7</div>
-      </div>
-    </div>
-
-    <div style="flex:1; min-width:280px;">
-      <h2 style="font-family:'Syne',sans-serif; font-size:36px; font-weight:800; letter-spacing:-1.5px; margin-bottom:6px; color:#E8F0F8;">
-        Stevens Ayouma
-      </h2>
-      <p style="font-size:14px; color:rgba(200,220,240,0.55); font-weight:500; margin-bottom:28px;">
-        Fondateur de Ges4Sec &#xB7; &#xCE;le-de-France
-      </p>
-
-      <div style="border-left:3px solid #1E90FF; padding:14px 20px; margin-bottom:24px; background:rgba(30,144,255,0.06); border-radius:0 10px 10px 0;">
-        <p style="font-size:15px; color:#E8F0F8; line-height:1.75; font-style:italic;">
-          "J'ai construit Ges4Sec pour r&#xE9;soudre un probl&#xE8;me que j'ai v&#xE9;cu de l'int&#xE9;rieur &#x2014; pas comme un d&#xE9;veloppeur qui d&#xE9;couvre le secteur, mais comme un professionnel qui le conna&#xEE;t depuis 10 ans."
-        </p>
-      </div>
-
-      <p style="font-size:14px; color:#C8DCF0; line-height:1.9; margin-bottom:16px;">
-        10 ans sur le terrain &#x2014; gestionnaire de 270 logements en &#xCE;le-de-France, agent sur les sites 
-        <strong style="color:#E8F0F8;">Christian Dior</strong>, 
-        <strong style="color:#E8F0F8;">Balenciaga</strong>, 
-        <strong style="color:#E8F0F8;">Jeux Olympiques 2024</strong>, Parc des Princes.
-      </p>
-
-      <p style="font-size:14px; color:#C8DCF0; line-height:1.9; margin-bottom:28px;">
-        Formateur agréé SSIAP et titulaire d'un MBA en Stratégie Digitale, j'ai travaillé à l'Université Paris-Dauphine | PSL comme assistant marketing et communication. C'est lors de cette expérience que j'ai découvert toute la puissance d'une plateforme de gestion &#x2014; et l'idée de Ges4Sec a germé.
-        
-        Mon ambition est de faire de Ges4Sec un véritable écosystème digital dans un secteur qui peine encore à se digitaliser.
-      </p>
-
-      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px;">
-        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Christian Dior</span>
-        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Balenciaga</span>
-        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">JO Paris 2024</span>
-        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Parc des Princes</span>
-        <span style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#E8F0F8; padding:5px 14px; border-radius:100px; font-size:11px; font-weight:600;">Paris Dauphine PSL</span>
-      </div>
-
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="https://www.linkedin.com/in/stevens-ayouma-922681184/" target="_blank"
-           style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1E90FF,#0055BB); color:#fff; padding:11px 22px; border-radius:10px; text-decoration:none; font-size:13px; font-weight:600; box-shadow:0 3px 14px rgba(30,144,255,0.25);">
-          &#x1F517; LinkedIn
-        </a>
-        <a href="mailto:contact@ges4sec.fr"
-           style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#E8F0F8; padding:11px 22px; border-radius:10px; text-decoration:none; font-size:13px; font-weight:600;">
-          &#x1F5E9; contact@ges4sec.fr
-        </a>
       </div>
     </div>
 
@@ -705,7 +655,7 @@ document.getElementById('waitlist-form').addEventListener('submit', async functi
   document.getElementById('waitlist-success').style.display = 'block';
 });
 
-// ── Nav scroll + FAQ ─────────────────────────────────────────────────────
+// ── FAQ ───────────────────────────────────────────────────────────────────
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -713,18 +663,15 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Toggle Mensuel/Annuel
+// ── Toggle Mensuel/Annuel ─────────────────────────────────────────────────
 const monthlyToggle = document.getElementById('monthly-toggle');
 const annualToggle = document.getElementById('annual-toggle');
 
 monthlyToggle.addEventListener('click', () => {
-  // Activer le bouton mensuel
   monthlyToggle.style.background = 'linear-gradient(135deg,#1E90FF,#0066CC)';
   monthlyToggle.style.color = '#fff';
   annualToggle.style.background = 'transparent';
   annualToggle.style.color = 'rgba(200,220,240,0.5)';
-  
-  // Afficher les prix mensuels
   document.querySelectorAll('.monthly-price').forEach(el => el.style.display = 'block');
   document.querySelectorAll('.annual-price').forEach(el => el.style.display = 'none');
   document.querySelectorAll('.monthly-desc').forEach(el => el.style.display = 'block');
@@ -735,13 +682,10 @@ monthlyToggle.addEventListener('click', () => {
 });
 
 annualToggle.addEventListener('click', () => {
-  // Activer le bouton annuel
   annualToggle.style.background = 'linear-gradient(135deg,#1E90FF,#0066CC)';
   annualToggle.style.color = '#fff';
   monthlyToggle.style.background = 'transparent';
   monthlyToggle.style.color = 'rgba(200,220,240,0.5)';
-  
-  // Afficher les prix annuels
   document.querySelectorAll('.monthly-price').forEach(el => el.style.display = 'none');
   document.querySelectorAll('.annual-price').forEach(el => el.style.display = 'block');
   document.querySelectorAll('.monthly-desc').forEach(el => el.style.display = 'none');
